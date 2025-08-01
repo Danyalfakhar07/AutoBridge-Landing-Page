@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 220 85% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 220 85% 60%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 220 85% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 220 85% 60%;
+
+    /* AutoBridge brand colors - extracted from logo */
+    --autobridge-blue: 220 85% 60%;
+    --autobridge-blue-light: 220 50% 85%;
+    --autobridge-green: 160 85% 45%;
+    --autobridge-green-light: 160 50% 75%;
+    --autobridge-gradient-from: 220 85% 60%;
+    --autobridge-gradient-to: 160 85% 45%;
+    --autobridge-bg-gradient: 220 20% 98%;
+  }
+
+  .dark {
+    /* Keep light theme consistent */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 220 85% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 220 85% 60%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 220 85% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 220 85% 60%;
+
+    /* Same AutoBridge colors for consistency */
+    --autobridge-blue: 220 85% 60%;
+    --autobridge-blue-light: 220 50% 85%;
+    --autobridge-green: 160 85% 45%;
+    --autobridge-green-light: 160 50% 75%;
+    --autobridge-gradient-from: 220 85% 60%;
+    --autobridge-gradient-to: 160 85% 45%;
+    --autobridge-bg-gradient: 220 20% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Light theme utilities */
+  .glass {
+    @apply backdrop-blur-lg bg-white/60 border border-white/40 shadow-lg;
+  }
+
+  .glass-card {
+    @apply backdrop-blur-sm bg-white/80 border border-gray-200/50 shadow-sm;
+  }
+
+  /* Light theme glow effects */
+  .glow-blue {
+    box-shadow: 0 4px 20px hsl(var(--autobridge-blue) / 0.15);
+  }
+
+  .glow-green {
+    box-shadow: 0 4px 20px hsl(var(--autobridge-green) / 0.15);
+  }
+
+  /* Subtle background patterns */
+  .bg-pattern {
+    background-image: radial-gradient(circle at 25% 25%, hsl(var(--autobridge-blue) / 0.05) 0%, transparent 50%),
+                      radial-gradient(circle at 75% 75%, hsl(var(--autobridge-green) / 0.05) 0%, transparent 50%);
+  }
+
+  /* Floating animations */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(5deg);
+    }
+  }
+
+  @keyframes float-delayed {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-15px) rotate(-3deg);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float-delayed 8s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+}
