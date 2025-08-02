@@ -213,8 +213,8 @@ export default function Index() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 bg-autobridge-subtle">
-        {/* Floating Company Logos */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Floating Company Logos - Hidden on mobile */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">
           {/* Gmail - Top left area */}
           <div className="absolute top-16 left-12 md:top-20 md:left-16 animate-float">
             <Card className="w-20 h-20 bg-white shadow-card border-border/50 rounded-2xl">
@@ -328,24 +328,24 @@ export default function Index() {
           </div>
         </div>
 
-        <div className="relative z-10 text-center max-w-5xl mx-auto">
+        <div className="relative z-10 text-center max-w-5xl mx-auto px-4">
           {/* Logo */}
-          <div className="mb-8 flex justify-center">
+          <div className="mb-6 md:mb-8 flex justify-center">
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2F804363ffbfb6459f87ae8cf9a76cb232%2F79e2a77dc9d84c9484e40b75d3829895?format=webp&width=800"
               alt="AutoBridge Logo"
-              className="h-16 w-auto"
+              className="h-12 md:h-16 w-auto"
             />
           </div>
 
           {/* Badge */}
-          <Badge className="mb-8 bg-autobridge-blue/10 text-autobridge-blue border-autobridge-blue/20 hover:bg-autobridge-blue/20 transition-all duration-300 px-4 py-2">
-            <Sparkles className="w-4 h-4 mr-2" />
+          <Badge className="mb-6 md:mb-8 bg-autobridge-blue/10 text-autobridge-blue border-autobridge-blue/20 hover:bg-autobridge-blue/20 transition-all duration-300 px-3 md:px-4 py-1.5 md:py-2 text-sm md:text-base">
+            <Sparkles className="w-3 h-3 md:w-4 md:h-4 mr-2" />
             MVP Launching Soon
           </Badge>
 
           {/* Headlines */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 leading-tight">
             <span className="bg-autobridge-gradient bg-clip-text text-transparent">
               Connect Everything
             </span>
@@ -353,7 +353,7 @@ export default function Index() {
             <span className="text-foreground">Automate Anything</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg lg:text-xl text-muted-foreground mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed px-2">
             AutoBridge lets you connect tools like Gmail, Slack, Notion, and
             more into powerful backend workflows, without writing a single line
             of code.
@@ -363,30 +363,30 @@ export default function Index() {
           <Button
             size="lg"
             onClick={() => setShowWishlistModal(true)}
-            className="bg-autobridge-gradient hover:shadow-autobridge-green-glow text-white font-semibold text-lg px-8 py-6 transition-all duration-300 transform hover:scale-105"
+            className="bg-autobridge-gradient hover:shadow-autobridge-green-glow text-white font-semibold text-base md:text-lg px-6 md:px-8 py-4 md:py-6 transition-all duration-300 transform hover:scale-105 w-full sm:w-auto"
           >
             Join the Wishlist
-            <ArrowRight className="w-5 h-5 ml-2" />
+            <ArrowRight className="w-4 h-4 md:w-5 md:h-5 ml-2" />
           </Button>
         </div>
       </section>
 
       {/* How It Works Section */}
-      <section className="py-24 px-4 bg-gradient-to-b from-white to-gray-50/30">
+      <section className="py-16 md:py-24 px-4 bg-gradient-to-b from-white to-gray-50/30">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-32">
-            <Badge className="mb-6 bg-autobridge-blue/10 text-autobridge-blue border-autobridge-blue/20 px-4 py-2">
-              <Zap className="w-4 h-4 mr-2" />
+          <div className="text-center mb-16 md:mb-32">
+            <Badge className="mb-4 md:mb-6 bg-autobridge-blue/10 text-autobridge-blue border-autobridge-blue/20 px-3 md:px-4 py-1.5 md:py-2 text-sm md:text-base">
+              <Zap className="w-3 h-3 md:w-4 md:h-4 mr-2" />
               Simple 3-Step Process
             </Badge>
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
               How{" "}
               <span className="bg-autobridge-gradient bg-clip-text text-transparent">
                 AutoBridge
               </span>{" "}
               Works
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-2">
               Transform your workflow in three simple steps with AI-powered automation
             </p>
           </div>
@@ -396,7 +396,7 @@ export default function Index() {
             {/* Connection Line */}
             <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-autobridge-blue via-autobridge-green to-autobridge-blue transform -translate-y-1/2 z-0"></div>
             
-            <div className="grid md:grid-cols-3 gap-8 md:gap-12 relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 relative z-10">
               {[
                 {
                   icon: <Database className="w-8 h-8" />,
@@ -488,69 +488,69 @@ export default function Index() {
       </section>
 
       {/* Why AutoBridge Section */}
-      <section className="py-24 px-4 bg-gradient-to-br from-gray-50 via-white to-autobridge-subtle">
+      <section className="py-16 md:py-24 px-4 bg-gradient-to-br from-gray-50 via-white to-autobridge-subtle">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-32 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 md:gap-32 items-center">
             {/* Left Side - Content */}
-            <div className="space-y-8">
+            <div className="space-y-6 md:space-y-8">
               <div>
-                <Badge className="mb-6 bg-autobridge-blue/10 text-autobridge-blue border-autobridge-blue/20 px-4 py-2">
-                  <Rocket className="w-4 h-4 mr-2" />
+                <Badge className="mb-4 md:mb-6 bg-autobridge-blue/10 text-autobridge-blue border-autobridge-blue/20 px-3 md:px-4 py-1.5 md:py-2 text-sm md:text-base">
+                  <Rocket className="w-3 h-3 md:w-4 md:h-4 mr-2" />
                   Why Choose AutoBridge
                 </Badge>
-                <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
                   Why{" "}
                   <span className="bg-autobridge-gradient bg-clip-text text-transparent">
                     Build
                   </span>{" "}
                   with AutoBridge?
                 </h2>
-                <p className="text-xl text-muted-foreground leading-relaxed">
+                <p className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed">
                   The most powerful agent building platform for modern businesses, designed to transform how you work.
                 </p>
               </div>
 
               {/* Benefits List */}
-              <div className="space-y-6">
+              <div className="space-y-4 md:space-y-6">
                 {[
                   {
-                    icon: <Clock className="w-5 h-5" />,
+                    icon: <Clock className="w-4 h-4 md:w-5 md:h-5" />,
                     title: "Save Hours Every Week",
                     description: "Eliminate repetitive tasks and focus on strategic work that drives real business value.",
                     stat: "10+ hours saved weekly"
                   },
                   {
-                    icon: <Brain className="w-5 h-5" />,
+                    icon: <Brain className="w-4 h-4 md:w-5 md:h-5" />,
                     title: "AI-Powered Intelligence",
                     description: "Advanced machine learning algorithms that understand context and make smart decisions.",
                     stat: "95% accuracy rate"
                   },
                   {
-                    icon: <Target className="w-5 h-5" />,
+                    icon: <Target className="w-4 h-4 md:w-5 md:h-5" />,
                     title: "100+ Integrations",
                     description: "Connect with all your favorite tools and services in one unified, powerful platform.",
                     stat: "150+ tools supported"
                   }
                 ].map((item, index) => (
                   <div key={index} className="group">
-                    <div className="flex items-start space-x-3 p-4 rounded-xl hover:bg-white/60 transition-all duration-300 group-hover:shadow-lg">
+                    <div className="flex items-start space-x-3 p-3 md:p-4 rounded-xl hover:bg-white/60 transition-all duration-300 group-hover:shadow-lg">
                       <div className="flex-shrink-0">
-                        <div className="w-10 h-10 bg-gradient-to-r from-autobridge-blue to-autobridge-green rounded-lg flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+                        <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-autobridge-blue to-autobridge-green rounded-lg flex items-center justify-center group-hover:scale-110 transition-all duration-300">
                           <div className="text-white">
                             {item.icon}
                           </div>
                         </div>
                       </div>
                       <div className="flex-1">
-                        <div className="flex items-center justify-between mb-2">
-                          <h3 className="text-lg font-semibold text-gray-900 group-hover:text-autobridge-blue transition-colors duration-300">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 space-y-1 sm:space-y-0">
+                          <h3 className="text-base md:text-lg font-semibold text-gray-900 group-hover:text-autobridge-blue transition-colors duration-300">
                             {item.title}
                           </h3>
-                          <span className="text-xs font-medium text-autobridge-green bg-autobridge-green/10 px-2 py-1 rounded-full">
+                          <span className="text-xs font-medium text-autobridge-green bg-autobridge-green/10 px-2 py-1 rounded-full w-fit">
                             {item.stat}
                           </span>
                         </div>
-                        <p className="text-muted-foreground leading-relaxed text-sm">
+                        <p className="text-muted-foreground leading-relaxed text-xs md:text-sm">
                           {item.description}
                         </p>
                       </div>
@@ -564,9 +564,9 @@ export default function Index() {
                          {/* Right Side - Animated Visual */}
              <div className="relative flex items-center justify-center">
                {/* Floating Platform Mockup */}
-               <div className="relative scale-110">
+               <div className="relative scale-75 md:scale-100 lg:scale-110">
                  {/* Main Platform Card */}
-                 <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-2xl rounded-3xl p-8 relative z-10">
+                 <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-2xl rounded-3xl p-4 md:p-6 lg:p-8 relative z-10">
                    <div className="space-y-6">
                      {/* Header */}
                      <div className="flex items-center justify-between">
@@ -579,9 +579,9 @@ export default function Index() {
                      </div>
 
                      {/* Navigation Tabs */}
-                     <div className="flex space-x-2">
+                     <div className="flex flex-wrap gap-1 md:gap-2">
                        {['Dashboard', 'Workflows', 'Integrations', 'Analytics'].map((tab, index) => (
-                         <div key={tab} className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                         <div key={tab} className={`px-2 md:px-4 py-1 md:py-2 rounded-lg text-xs md:text-sm font-medium transition-all duration-300 ${
                            index === 0 ? 'bg-autobridge-blue/10 text-autobridge-blue' : 'text-muted-foreground hover:text-gray-900'
                          }`}>
                            {tab}
@@ -590,35 +590,35 @@ export default function Index() {
                      </div>
 
                      {/* Content Area */}
-                     <div className="space-y-5">
+                     <div className="space-y-3 md:space-y-5">
                        {/* Stats Row */}
-                       <div className="grid grid-cols-3 gap-4">
+                       <div className="grid grid-cols-3 gap-2 md:gap-4">
                          {[
                            { label: 'Active Workflows', value: '24', color: 'autobridge-blue' },
                            { label: 'Integrations', value: '12', color: 'autobridge-green' },
                            { label: 'Time Saved', value: '8.5h', color: 'purple-600' }
                          ].map((stat, index) => (
-                           <div key={index} className="bg-gray-50 rounded-xl p-4 text-center">
-                             <div className={`text-2xl font-bold text-${stat.color} mb-1`}>{stat.value}</div>
+                           <div key={index} className="bg-gray-50 rounded-xl p-2 md:p-4 text-center">
+                             <div className={`text-lg md:text-2xl font-bold text-${stat.color} mb-1`}>{stat.value}</div>
                              <div className="text-xs text-muted-foreground">{stat.label}</div>
                            </div>
                          ))}
                        </div>
 
                        {/* Recent Activity */}
-                       <div className="space-y-3">
-                         <h4 className="text-sm font-semibold text-gray-900">Recent Activity</h4>
+                       <div className="space-y-2 md:space-y-3">
+                         <h4 className="text-xs md:text-sm font-semibold text-gray-900">Recent Activity</h4>
                          {[
                            { action: 'Gmail trigger activated', time: '2 min ago', status: 'success' },
                            { action: 'Slack notification sent', time: '5 min ago', status: 'success' },
                            { action: 'Notion page updated', time: '8 min ago', status: 'processing' }
                          ].map((activity, index) => (
-                           <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                             <div className="flex items-center space-x-3">
+                           <div key={index} className="flex items-center justify-between p-2 md:p-3 bg-gray-50 rounded-lg">
+                             <div className="flex items-center space-x-2 md:space-x-3">
                                <div className={`w-2 h-2 rounded-full ${
                                  activity.status === 'success' ? 'bg-green-500' : 'bg-yellow-500 animate-pulse'
                                }`}></div>
-                               <span className="text-sm text-gray-700">{activity.action}</span>
+                               <span className="text-xs md:text-sm text-gray-700">{activity.action}</span>
                              </div>
                              <span className="text-xs text-muted-foreground">{activity.time}</span>
                            </div>
@@ -628,20 +628,20 @@ export default function Index() {
                    </div>
                  </Card>
 
-                 {/* Floating Elements */}
-                 <div className="absolute -top-6 -right-6 animate-bounce" style={{animationDelay: '0.5s'}}>
+                 {/* Floating Elements - Hidden on mobile */}
+                 <div className="absolute -top-6 -right-6 animate-bounce hidden md:block" style={{animationDelay: '0.5s'}}>
                    <div className="w-20 h-20 bg-gradient-to-r from-autobridge-green to-green-500 rounded-2xl flex items-center justify-center shadow-lg">
                      <CheckCircle className="w-10 h-10 text-white" />
                    </div>
                  </div>
 
-                 <div className="absolute -bottom-6 -left-6 animate-bounce" style={{animationDelay: '1s'}}>
+                 <div className="absolute -bottom-6 -left-6 animate-bounce hidden md:block" style={{animationDelay: '1s'}}>
                    <div className="w-16 h-16 bg-gradient-to-r from-autobridge-blue to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
                      <Zap className="w-8 h-8 text-white" />
                    </div>
                  </div>
 
-                 <div className="absolute top-1/2 -right-8 animate-pulse">
+                 <div className="absolute top-1/2 -right-8 animate-pulse hidden md:block">
                    <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg">
                      <Brain className="w-5 h-5 text-white" />
                    </div>
@@ -768,26 +768,26 @@ export default function Index() {
       </section>
 
       {/* Contact Us Section */}
-      <section className="py-24 px-4 bg-gradient-to-br from-gray-50 via-white to-autobridge-subtle">
+      <section className="py-16 md:py-24 px-4 bg-gradient-to-br from-gray-50 via-white to-autobridge-subtle">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <Badge className="mb-6 bg-autobridge-blue/10 text-autobridge-blue border-autobridge-blue/20 px-4 py-2">
-              <MessageCircle className="w-4 h-4 mr-2" />
+          <div className="text-center mb-12 md:mb-20">
+            <Badge className="mb-4 md:mb-6 bg-autobridge-blue/10 text-autobridge-blue border-autobridge-blue/20 px-3 md:px-4 py-1.5 md:py-2 text-sm md:text-base">
+              <MessageCircle className="w-3 h-3 md:w-4 md:h-4 mr-2" />
               Get in Touch
             </Badge>
-            <h2 className="text-xl md:text-6xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
               Let's{" "}
               <span className="bg-autobridge-gradient bg-clip-text text-transparent">
                 Connect
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed px-2">
               Have questions about AutoBridge? Want to discuss potential partnerships? 
               We'd love to hear from you.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-32 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-32 items-start">
             {/* Contact Info - Left Aligned */}
             <div className="space-y-10 lg:text-left">
               <div>
@@ -836,7 +836,7 @@ export default function Index() {
 
             {/* Contact Form - Right Aligned */}
             <div className="lg:flex lg:justify-end">
-              <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-2xl rounded-3xl p-10 w-full lg:w-[600px]">
+              <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-2xl rounded-3xl p-6 md:p-10 w-full lg:w-[600px]">
                               <form onSubmit={handleContactSubmit} className="space-y-8">
                   <div>
                     <label htmlFor="name" className="block text-lg font-semibold text-gray-700 mb-3">
@@ -915,21 +915,21 @@ export default function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="py-16 px-4 border-t border-border/50 bg-white">
+      <footer className="py-12 md:py-16 px-4 border-t border-border/50 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="flex items-center gap-4 mb-6 md:mb-0">
+            <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-0">
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F804363ffbfb6459f87ae8cf9a76cb232%2F79e2a77dc9d84c9484e40b75d3829895?format=webp&width=800"
                 alt="AutoBridge Logo"
-                className="h-8 w-auto"
+                className="h-6 md:h-8 w-auto"
               />
-              <span className="text-sm text-muted-foreground">
+              <span className="text-xs md:text-sm text-muted-foreground">
                 © 2025 AutoBridge. All rights reserved.
               </span>
             </div>
 
-            <div className="flex gap-6 text-sm">
+            <div className="flex gap-4 md:gap-6 text-xs md:text-sm">
               <Link
                 to="/privacy-policy"
                 className="text-muted-foreground hover:text-autobridge-blue transition-colors"
